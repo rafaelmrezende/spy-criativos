@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spy Criativos - Otimize seus anúncios com IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>🕵️‍♂️ Spy Criativos</h1>
+            <p>Extraia e otimize criativos de anúncios com IA</p>
+        </header>
+
+        <main class="app-main">
+            <section class="url-input-section">
+                <form id="urlForm">
+                    <div class="input-group">
+                        <input 
+                            type="url" 
+                            id="urlInput" 
+                            placeholder="Cole a URL do anúncio (Meta Ads, Taboola, Outbrain, etc.)" 
+                            required
+                        >
+                        <button type="submit" id="analyzeBtn">Analisar</button>
+                    </div>
+                    <div class="error-message" id="errorMessage"></div>
+                </form>
+            </section>
+
+            <div class="loading-container" id="loadingContainer" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Analisando o anúncio e gerando variações...</p>
+            </div>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="original">Original</button>
+                    <button class="tab-btn" data-tab="emocional">Emocional</button>
+                    <button class="tab-btn" data-tab="escassez">Escassez</button>
+                    <button class="tab-btn" data-tab="autoridade">Autoridade</button>
+                    <button class="tab-btn" data-tab="landing">Landing Page</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="original">
+                        <div class="variation-card original">
+                            <div class="card-header">
+                                <h3>Criativo Original</h3>
+                                <span class="angle-badge" id="originalAngle">benefício</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="headline" id="originalHeadline">Descubra o Segredo para Pele Jovem aos 50+</div>
+                                <div class="description" id="originalDescription">Este produto revolucionário está ajudando milhares de mulheres a recuperar a juventude da pele. Resultados visíveis em apenas 14 dias!</div>
+                                <div class="cta" id="originalCta">CTA: Saiba Mais</div>
+                                <div class="image-container">
+                                    <img src="https://via.placeholder.com/400x300" alt="Imagem do anúncio" id="adImage">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="emocional">
+                        <div class="variation-card emocional">
+                            <div class="card-header">
+                                <h3>Variação Emocional</h3>
+                                <span class="angle-badge">emocional</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="headline" id="emocionalHeadline">Surpreendente! Sinta a Transformação da Sua Pele aos 50+</div>
+                                <div class="description" id="emocionalDescription">Imagine como seria incrível Este produto revolucionário está ajudando milhares de mulheres. Você merece essa experiência única!</div>
+                                <div class="cta" id="emocionalCta">CTA: Sinta a diferença</div>
+                                <div class="image-container">
+                                    <img src="https://via.placeholder.com/400x300" alt="Imagem do anúncio" id="adImageEmocional">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="escassez">
+                        <div class="variation-card escassez">
+                            <div class="card-header">
+                                <h3>Variação Escassez</h3>
+                                <span class="angle-badge">escassez</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="headline" id="escassezHeadline">ÚLTIMAS UNIDADES: Descubra o Segredo para Pele Jovem aos 50+</div>
+                                <div class="description" id="escassezDescription">Corra! Restam apenas poucas unidades! Este produto revolucionário está ajudando milhares de mulheres. Oferta válida enquanto durar o estoque!</div>
+                                <div class="cta" id="escassezCta">CTA: Garanta já</div>
+                                <div class="image-container">
+                                    <img src="https://via.placeholder.com/400x300" alt="Imagem do anúncio" id="adImageEscassez">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="autoridade">
+                        <div class="variation-card autoridade">
+                            <div class="card-header">
+                                <h3>Variação Autoridade</h3>
+                                <span class="angle-badge">autoridade</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="headline" id="autoridadeHeadline">CIENTIFICAMENTE COMPROVADO: Descubra o Segredo para Pele Jovem aos 50+</div>
+                                <div class="description" id="autoridadeDescription">Recomendado por 9 entre 10 especialistas. Este produto revolucionário está ajudando milhares de mulheres. Junte-se aos milhares de clientes satisfeitos!</div>
+                                <div class="cta" id="autoridadeCta">CTA: Veja as avaliações</div>
+                                <div class="image-container">
+                                    <img src="https://via.placeholder.com/400x300" alt="Imagem do anúncio" id="adImageAutoridade">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="landing">
+                        <div class="variation-card landing">
+                            <div class="card-header">
+                                <h3>Variação Landing Page</h3>
+                            </div>
+                            <div class="card-body landing-preview">
+                                <h2 class="landing-headline" id="landingHeadline">Descubra o Segredo para Pele Jovem aos 50+</h2>
+                                <h3 class="landing-subheadline" id="landingSubheadline">A solução definitiva para recuperar a juventude da sua pele</h3>
+                                <div class="landing-bullets" id="landingBullets">
+                                    <div class="bullet-item">✓ Resultados visíveis em apenas 14 dias</div>
+                                    <div class="bullet-item">✓ Fórmula exclusiva com ingredientes naturais</div>
+                                    <div class="bullet-item">✓ Testado e aprovado por dermatologistas</div>
+                                    <div class="bullet-item">✓ Satisfação garantida ou seu dinheiro de volta</div>
+                                </div>
+                                <div class="landing-cta" id="landingCta">QUERO TRANSFORMAR MINHA PELE AGORA</div>
+                                <div class="landing-testimonial" id="landingTestimonial">"Nunca imaginei que poderia me sentir tão bem com minha pele novamente!" - Maria S.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="download-section" id="downloadSection" style="display: none;">
+                <h3>Exportar Resultados</h3>
+                <div class="download-buttons">
+                    <button class="download-btn pdf" id="pdfBtn">Baixar PDF</button>
+                    <button class="download-btn html" id="htmlBtn">Baixar HTML</button>
+                    <button class="download-btn markdown" id="markdownBtn">Baixar Markdown</button>
+                    <button class="download-btn landing" id="landingBtn">Baixar Landing Page</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Spy Criativos - Otimize seus anúncios com IA</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

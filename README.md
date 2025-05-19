@@ -23,20 +23,35 @@ O Spy Criativos é um micro SaaS que permite extrair criativos de anúncios (Met
    - Acesse [vercel.com](https://vercel.com)
    - Clique em "Sign Up" e crie uma conta (pode usar GitHub, GitLab ou email)
 
-2. **Crie um repositório no GitHub**
+2. **Faça upload dos arquivos**
+   - Na página inicial da Vercel, clique em "Add New..." e depois em "Project"
+   - Escolha "Upload" na seção "Import Git Repository"
+   - Arraste todos os arquivos descompactados da pasta para o navegador
+   - Clique em "Deploy"
+
+3. **Acesse seu site**
+   - Após o deploy (cerca de 1-2 minutos), o Vercel fornecerá uma URL
+   - Seu Spy Criativos estará disponível nessa URL!
+
+### Opção 2: Deploy via GitHub + Vercel
+
+1. **Crie uma conta no GitHub**
    - Acesse [github.com](https://github.com)
-   - Clique em "New repository"
+   - Clique em "Sign Up" e crie uma conta
+
+2. **Crie um repositório no GitHub**
+   - Na página inicial do GitHub, clique em "New repository"
    - Dê um nome ao repositório (ex: "spy-criativos")
    - Deixe como público e clique em "Create repository"
 
 3. **Faça upload dos arquivos**
    - Na página do repositório, clique em "uploading an existing file"
-   - Arraste todos os arquivos da pasta `spy-criativos-interface` para o navegador
+   - Arraste todos os arquivos descompactados para o navegador
    - Clique em "Commit changes"
 
 4. **Conecte o Vercel ao GitHub**
-   - Volte para o Vercel e faça login
-   - Clique em "New Project"
+   - Acesse [vercel.com](https://vercel.com) e faça login
+   - Clique em "Add New..." e depois em "Project"
    - Selecione o repositório que você acabou de criar
    - Mantenha as configurações padrão e clique em "Deploy"
 
@@ -44,54 +59,22 @@ O Spy Criativos é um micro SaaS que permite extrair criativos de anúncios (Met
    - Após o deploy (cerca de 1-2 minutos), o Vercel fornecerá uma URL
    - Seu Spy Criativos estará disponível nessa URL!
 
-### Opção 2: Deploy Local (Para Testes)
+### Opção 3: Deploy Local (Para Testes)
 
-1. **Instale o Node.js**
-   - Baixe e instale o Node.js em [nodejs.org](https://nodejs.org)
-
-2. **Abra o terminal/prompt de comando**
-   - No Windows: Pressione Win+R, digite "cmd" e pressione Enter
-   - No Mac: Abra o aplicativo Terminal
-
-3. **Navegue até a pasta do projeto**
-   ```
-   cd caminho/para/spy-criativos-interface
-   ```
-
-4. **Instale as dependências**
-   ```
-   npm install
-   ```
-
-5. **Inicie o servidor local**
-   ```
-   npm start
-   ```
-
-6. **Acesse o aplicativo**
-   - Abra seu navegador e acesse: http://localhost:3000
+1. **Instale um servidor local simples**
+   - Se você tem Python instalado, abra o terminal/prompt de comando
+   - Navegue até a pasta com os arquivos descompactados
+   - Execute: `python -m http.server 8000`
+   - Abra seu navegador e acesse: http://localhost:8000
 
 ## Estrutura do Projeto
 
 ```
-spy-criativos/
-├── src/                    # Código-fonte Python
-│   ├── scraper.py          # Módulo de extração de anúncios
-│   ├── analyzer.py         # Módulo de análise e geração de variações
-│   └── exporter.py         # Módulo de exportação (PDF, HTML, Markdown)
-│
-├── output/                 # Arquivos gerados
-│   ├── variacoes.html      # Variações em formato HTML
-│   ├── variacoes.pdf       # Variações em formato PDF
-│   ├── variacoes.md        # Variações em formato Markdown
-│   └── landing_page_variacao.html  # Landing page otimizada
-│
-├── spy-criativos-interface/  # Interface de usuário React
-│   ├── src/                # Código-fonte da interface
-│   ├── public/             # Arquivos públicos
-│   └── package.json        # Dependências e scripts
-│
-└── README.md               # Este arquivo
+spy-criativos-vercel/
+├── index.html          # Página principal da aplicação
+├── styles.css          # Estilos CSS da aplicação
+├── script.js           # Código JavaScript para funcionalidades
+└── vercel.json         # Configuração para deploy no Vercel
 ```
 
 ## Uso do Aplicativo
