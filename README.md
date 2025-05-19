@@ -1,4 +1,4 @@
-# README - Spy Criativos 
+# README - Spy Criativos
 
 ## Sobre o Projeto
 
